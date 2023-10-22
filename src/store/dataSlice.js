@@ -1,27 +1,24 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {v4 as uuidv4} from 'uuid';
 
-const initialState = {
-    pump: '',
-    property: [
-        {id: uuidv4(), value: 'ГХ'},
-        {id: uuidv4(), value: 'ГХМ'},
-        {id: uuidv4(), value: 'ГХС'},
-        {id: uuidv4(), value: 'ГХИ'},
-    ]
-}
+const ALL_PUMPS = 'ALL_PUMPS';
+const GHI = 'GHI';
+
+
+const initialState = [
+    {id: uuidv4(), currentValue: '', name: 'Подача, м3/ч:', type: 'input', pumpsOptions: 'ГХ'},
+    {id: uuidv4(), currentValue: '', name: 'Глубина погружения, м:', type: 'input', pumpsOptions: GHI},
+]
 
 
 const propertiesSlice = createSlice({
         name: 'propertiesPumps',
         initialState,
         reducers: {
-            newPump(state, action) {
-                state.pump = action.payload
-            }
+
         }
     }
 )
 
-export const {newPump} = propertiesSlice.actions;
+export const {} = propertiesSlice.actions;
 export default propertiesSlice.reducer;

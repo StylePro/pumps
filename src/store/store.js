@@ -4,7 +4,7 @@ import propertiesReducer from './dataSlice'
 
 export default configureStore ({
     reducer: {
-        pump: pumpReducer,
+        pumps: pumpReducer,
         propertiesPumps: propertiesReducer
     }
 })

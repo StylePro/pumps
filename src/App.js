@@ -1,26 +1,18 @@
 import './App.css';
 import './index.css'
-import {useDispatch, useSelector} from "react-redux";
-import {newPump} from "./store/dataSlice";
+import PumpSelection from "./PumpSelection";
+import SelectionOfPumpOptions from "./SelectionOfPumpOptions";
 
 function App() {
-    const pumps = useSelector(state => state.propertiesPumps)
-    const dispatch = useDispatch();
-    function addPump(e) {
-        dispatch(newPump(e.target.value))
-    }
-  return (
-    <div className="App">
-        <div>
-            <label> Тип насоса:
-                <select value={pumps.pump || ''} onChange={(e)=> addPump(e)}>
-                    <option value='' disabled hidden>-выберите насос-</option>
-                    {pumps.property.map(pump => <option key={pump.id} value={pump.value}>{pump.value}</option>)}
-                </select>
-            </label>
+
+    return (
+        <div className="App">
+            <div>
+                <PumpSelection/>
+                <SelectionOfPumpOptions/>
+            </div>
         </div>
-    </div>
-  );
+    );
 }
 
 export default App;
