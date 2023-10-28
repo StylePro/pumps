@@ -1,17 +1,17 @@
 import './App.css';
 import './index.css'
-import PumpSelection from "./PumpSelection";
-import SelectionOfPumpOptions from "./SelectionOfPumpOptions";
+import PumpSelection from "./components/PumpSelection/PumpSelection";
+import SelectionOfPumpOptions from "./components/SelectionOfPumpOptions";
 import {useSelector} from "react-redux";
+import Nav from "./components/Nav/Nav";
 
 function App() {
-    const pump = useSelector(state=> state.pumps.currentPump.valueRus)
+    const pump = useSelector(state => state.pumps.currentPump.valueRus)
     return (
         <div className="App">
-            <div>
-                <PumpSelection/>
-                {pump && <SelectionOfPumpOptions/>}
-            </div>
+            <Nav/>
+            <PumpSelection/>
+            {pump && <SelectionOfPumpOptions/>}
         </div>
     );
 }

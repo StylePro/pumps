@@ -1,0 +1,8 @@
+.nav {
+    margin: 5px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid honeydew;
+}

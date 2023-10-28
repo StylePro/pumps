@@ -1,15 +1,22 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {v4 as uuidv4} from 'uuid';
 
-const ALL_PUMPS = 'ALL_PUMPS';
-const GH = 'GH';
-const GHM = 'GHM';
-const GHI = 'GHI';
-const GHS = 'GHS';
-const VND = 'VND';
-const AHI = 'AHI';
-const AH = 'AH';
-const AHM = 'AHM';
+export const ALL_PUMPS = 'ALL_PUMPS';
+export const GH_PUMPS = 'GH';
+export const GHM_PUMPS = 'GHM';
+export const GHI_PUMPS = 'GHI';
+export const GHS_PUMPS = 'GHS';
+export const VND_PUMPS = 'VND';
+export const AHI_PUMPS = 'AHI';
+export const AH_PUMPS = 'AH';
+export const AHM_PUMPS = 'AHM';
+export const AHS_PUMPS = 'AHS';
+export const HA_VS4_PUMPS = 'НА(VS4)';
+export const HA_OH1_PUMPS = 'НА(OH1)';
+export const HA_OH2_PUMPS = 'НА(OH2)';
+export const HA_BB4_PUMPS = 'НА(BB4)';
+
+
 
 
 
@@ -20,7 +27,7 @@ const initialState = [
         viewType: 'input',
         currentValue: '',
         application: [ALL_PUMPS],
-        type: 'number'
+        type: 'number',
     },
     {
         id: uuidv4(),
@@ -28,7 +35,7 @@ const initialState = [
         viewType: 'input',
         currentValue: '',
         application: [ALL_PUMPS],
-        type: 'number'
+        type: 'number',
     },
     {
         id: uuidv4(),
@@ -38,7 +45,6 @@ const initialState = [
         application: [ALL_PUMPS],
         type: 'string',
         selectOptions: [
-            {id: uuidv4(), code: ''},
             {id: uuidv4(), code: '13'},
             {id: uuidv4(), code: '14'},
             {id: uuidv4(), code: '02'},
@@ -52,7 +58,7 @@ const initialState = [
         viewType: 'input',
         currentValue: '',
         application: [ALL_PUMPS],
-        type: 'number'
+        type: 'number',
     },
     {
         id: uuidv4(),
@@ -60,14 +66,14 @@ const initialState = [
         viewType: 'input',
         currentValue: '',
         application: [ALL_PUMPS],
-        type: 'number'
+        type: 'number',
     },
     {
         id: uuidv4(),
         name: 'Тип уплотнения: ',
         viewType: 'select',
         currentValue: '',
-        application: [GH, GHM, GHI],
+        application: [GH_PUMPS, GHM_PUMPS, GHI_PUMPS],
         type: 'string',
         selectOptions: [
             {id: uuidv4(), code: 'Герметичный экран'},
@@ -78,7 +84,7 @@ const initialState = [
         name: 'Тип уплотнения: ',
         viewType: 'select',
         currentValue: '',
-        application: [VND],
+        application: [VND_PUMPS],
         type: 'string',
         selectOptions: [
             {id: uuidv4(), code: 'Два одинарных торцовых, установленных по схеме "Тандем"'},
@@ -90,10 +96,9 @@ const initialState = [
         name: 'Тип уплотнения: ',
         viewType: 'select',
         currentValue: '',
-        application: [AH, AHM, 'HA(OH1)', 'HA(OH2)'],
+        application: [AH_PUMPS, AHM_PUMPS, HA_OH1_PUMPS, HA_OH2_PUMPS],
         type: 'string',
         selectOptions: [
-            {id: uuidv4(), code: '-'},
             {id: uuidv4(), code: 'Сальниковое'},
             {id: uuidv4(), code: 'Одинарное торцовое'},
             {id: uuidv4(), code: 'Двойное торцовое'},
@@ -105,18 +110,17 @@ const initialState = [
         name: 'Глубина погружения, м: ',
         viewType: 'input',
         currentValue: '',
-        application: [GHI, VND, AHI, 'HA(VS4)'],
-        type: 'number'
+        application: [GHI_PUMPS, VND_PUMPS, AHI_PUMPS, HA_VS4_PUMPS],
+        type: 'number',
     },
     {
         id: uuidv4(),
         name: 'Опорная плита: ',
         viewType: 'select',
         currentValue: '',
-        application: [GHI, VND, AHI, 'HA(VS4)'],
+        application: [GHI_PUMPS, VND_PUMPS, AHI_PUMPS, HA_VS4_PUMPS],
         type: 'string',
         selectOptions: [
-            {id: uuidv4(), code: ''},
             {id: uuidv4(), code: '600-6-01-1-B'},
             {id: uuidv4(), code: '700-6-01-1-B'},
             {id: uuidv4(), code: '800-6-01-1-B'},
@@ -130,7 +134,6 @@ const initialState = [
         application: [ALL_PUMPS],
         type: 'string',
         selectOptions: [
-            {id: uuidv4(), code: ''},
             {id: uuidv4(), code: 'Отсутствуют'},
             {id: uuidv4(), code: 'до 0,5% размером до 0,2мм'},
             {id: uuidv4(), code: 'до 1 % размером до 1 мм'},
@@ -144,7 +147,6 @@ const initialState = [
         application: [ALL_PUMPS],
         type: 'string',
         selectOptions: [
-            {id: uuidv4(), code: '', value: ''},
             {id: uuidv4(), code: "УХЛ3", value: '[-60...+40]'},
             {id: uuidv4(), code: 'У2.5', value: '[-45...+40]'},
             {id: uuidv4(), code: 'У1', value: '[-45...+40]'},
@@ -157,24 +159,24 @@ const initialState = [
         name: 'Высота всасывания, м: ',
         viewType: 'input',
         currentValue: '',
-        application: [GHS],
-        type: 'number'
+        application: [GHS_PUMPS],
+        type: 'number',
     },
     {
         id: uuidv4(),
         name: 'Длина всасывающего трубопровода, м: ',
         viewType: 'input',
         currentValue: '',
-        application: [GHS],
-        type: 'number'
+        application: [GHS_PUMPS],
+        type: 'number',
     },
     {
         id: uuidv4(),
         name: 'Диаметр всасывающего трубопровода, м: ',
         viewType: 'input',
         currentValue: '',
-        application: [GHS],
-        type: 'number'
+        application: [GHS_PUMPS],
+        type: 'number',
     },
 ]
 
@@ -182,9 +184,20 @@ const initialState = [
 const propertiesSlice = createSlice({
         name: 'propertiesPumps',
         initialState,
-        reducers: {}
+        reducers: {
+            addInput(state, action) {
+                const {text, id} = action.payload
+                const newText = state.find(el=> el.id === id)
+                newText.currentValue = text
+            },
+            addSelect (state, action) {
+                const {text, id} = action.payload
+                const newSelect = state.find(el=> el.id === id)
+                newSelect.currentValue = text
+            }
+        }
     }
 )
 
-export const {} = propertiesSlice.actions;
+export const {addInput, addSelect} = propertiesSlice.actions;
 export default propertiesSlice.reducer;
