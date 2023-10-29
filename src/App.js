@@ -1,7 +1,7 @@
 import './App.css';
 import './index.css'
 import PumpSelection from "./components/PumpSelection/PumpSelection";
-import SelectionOfPumpOptions from "./components/SelectionOfPumpOptions";
+import SelectionOptions from "./components/SelectionOptions/SelectionOptions";
 import {useSelector} from "react-redux";
 import Nav from "./components/Nav/Nav";
 
@@ -11,7 +11,7 @@ function App() {
         <div className="App">
             <Nav/>
             <PumpSelection/>
-            {pump && <SelectionOfPumpOptions/>}
+            {pump && <SelectionOptions/>}
         </div>
     );
 }

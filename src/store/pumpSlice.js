@@ -10,7 +10,7 @@ import {
     GHM_PUMPS,
     GHS_PUMPS, HA_BB4_PUMPS,
     HA_OH1_PUMPS, HA_OH2_PUMPS, HA_VS4_PUMPS
-} from "./dataSlice";
+} from "./dataPumpSlice";
 
 
 const initialState = {
