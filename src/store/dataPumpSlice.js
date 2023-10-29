@@ -139,21 +139,7 @@ const initialState = [
             {id: uuidv4(), code: 'до 1 % размером до 1 мм'},
         ]
     },
-    {
-        id: uuidv4(),
-        name: 'Климатическое исполнение: ',
-        viewType: 'select',
-        currentValue: '',
-        application: [ALL_PUMPS],
-        type: 'string',
-        selectOptions: [
-            {id: uuidv4(), code: "УХЛ3", value: '[-60...+40]'},
-            {id: uuidv4(), code: 'У2.5', value: '[-45...+40]'},
-            {id: uuidv4(), code: 'У1', value: '[-45...+40]'},
-            {id: uuidv4(), code: 'УХЛ2', value: '[-60...+40]'},
-            {id: uuidv4(), code: 'УХЛ1', value: '[-60...+40]'},
-        ]
-    },
+
     {
         id: uuidv4(),
         name: 'Высота всасывания, м: ',
@@ -185,12 +171,12 @@ const propertiesSlice = createSlice({
         name: 'propertiesPumps',
         initialState,
         reducers: {
-            addInput(state, action) {
+            inputPropertiesPump(state, action) {
                 const {text, id} = action.payload
                 const newText = state.find(el=> el.id === id)
                 newText.currentValue = text
             },
-            addSelect (state, action) {
+            selectPropertiesPump (state, action) {
                 const {text, id} = action.payload
                 const newSelect = state.find(el=> el.id === id)
                 newSelect.currentValue = text
@@ -199,5 +185,7 @@ const propertiesSlice = createSlice({
     }
 )
 
-export const {addInput, addSelect} = propertiesSlice.actions;
+export const {
+    inputPropertiesPump,
+    selectPropertiesPump} = propertiesSlice.actions;
 export default propertiesSlice.reducer;
