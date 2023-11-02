@@ -2,13 +2,14 @@ import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {newPump} from "../../store/pumpSlice";
 import styles from './PumpSelection.module.css'
+import {clearCurrentValue} from "../../store/dataPumpSlice";
 
 const PumpSelection = () => {
     const {currentPump, typesOfPumps} = useSelector(state => state.pumps)
     const dispatch = useDispatch();
-    console.log(currentPump, typesOfPumps)
 
     function addPump(value) {
+        dispatch(clearCurrentValue())
         return dispatch(newPump(value))
     }
 
