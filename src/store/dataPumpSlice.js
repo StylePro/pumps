@@ -1,4 +1,4 @@
-import {createSlice, current} from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 import {v4 as uuidv4} from 'uuid';
 
 export const ALL_PUMPS = 'ALL_PUMPS';
@@ -39,6 +39,30 @@ const initialState = [
     },
     {
         id: uuidv4(),
+        name: 'Давление на входе, МПа: ',
+        viewType: 'input',
+        currentValue: '',
+        application: [ALL_PUMPS],
+        type: 'number',
+    },
+    {
+        id: uuidv4(),
+        name: 'Давление на выходе, МПа: ',
+        viewType: 'input',
+        currentValue: '',
+        application: [ALL_PUMPS],
+        type: 'number',
+    },
+    {
+        id: uuidv4(),
+        name: 'Плотность, кг/м3: ',
+        viewType: 'input',
+        currentValue: '',
+        application: [ALL_PUMPS],
+        type: 'number',
+    },
+    {
+        id: uuidv4(),
         name: 'Код материала: ',
         viewType: 'select',
         currentValue: '',
@@ -51,14 +75,6 @@ const initialState = [
             {id: uuidv4(), code: '82'},
             {id: uuidv4(), code: '85'},
         ]
-    },
-    {
-        id: uuidv4(),
-        name: 'Плотность, кг/м3: ',
-        viewType: 'input',
-        currentValue: '',
-        application: [ALL_PUMPS],
-        type: 'number',
     },
     {
         id: uuidv4(),
@@ -193,7 +209,7 @@ const propertiesSlice = createSlice({
                 const newSelect = state.find(el=> el.id === id)
                 newSelect.currentValue = text
             },
-            clearCurrentValue (state, action) {
+            clearCurrentValue (state) {
                 return state.map(el=> el.currentValue !== '' ? {...el, currentValue: ''}: el)
             }
         }

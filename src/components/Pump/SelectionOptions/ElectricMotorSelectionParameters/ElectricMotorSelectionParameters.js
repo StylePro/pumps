@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {selectPropertiesElectricMotor} from "../../../store/dataElectricMotorSlice";
+import {selectPropertiesElectricMotor} from "../../../../store/dataElectricMotorSlice";
+
 
 
 const ElectricMotorSelectionParameters = () => {
@@ -47,6 +48,8 @@ const ElectricMotorSelectionParameters = () => {
                     </div>
                 )
             })}
+            <button>Очистить</button>
+            <button>Далее</button>
         </div>
     );
 };

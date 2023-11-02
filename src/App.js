@@ -1,19 +1,27 @@
 import './App.css';
 import './index.css'
-import PumpSelection from "./components/PumpSelection/PumpSelection";
-import SelectionOptions from "./components/SelectionOptions/SelectionOptions";
-import {useSelector} from "react-redux";
-import Nav from "./components/Nav/Nav";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import MainLayOut from "./components/MainLayOut/MainLayOut";
+import GeneratePump from "./components/GeneratePump/GeneratePump";
+import Pump from "./components/Pump/Pump";
+import ElectricMotor from "./components/Pump/SelectionOptions/ElectricMotor/ElectricMotor";
+import React from "react";
 
 function App() {
-    const pump = useSelector(state => state.pumps.currentPump.valueRus)
+
     return (
-        <div className="App">
-            <Nav/>
-            <PumpSelection/>
-            {pump && <SelectionOptions/>}
-        </div>
-    );
+        <BrowserRouter>
+            <div className="App">
+               <Routes>
+                   <Route path='/' element={<MainLayOut/>}>
+                       <Route index element={<Pump/>}/>
+                       <Route path='electricmotor' element={<ElectricMotor/>}/>
+                       <Route path='generatepump' element={<GeneratePump/>}/>
+                   </Route>
+               </Routes>
+            </div>
+        </BrowserRouter>
+    )
 }
 
 export default App;

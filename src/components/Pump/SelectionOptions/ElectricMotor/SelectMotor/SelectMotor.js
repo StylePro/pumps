@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {addDataElectricMotor} from "../../../../store/availabilityMotorElectric";
+import {addDataElectricMotor} from "../../../../../store/availabilityMotorElectric";
 
 const SelectMotor = () => {
 

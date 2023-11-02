@@ -1,6 +1,5 @@
 import React from 'react';
 import PumpSelectionParameters from "./PumpSelectionParameters/PumpSelectionParameters";
-import ElectricMotor from "./ElectricMotor/ElectricMotor";
 
 
 const SelectionOptions = () => {
@@ -8,7 +7,6 @@ const SelectionOptions = () => {
     return (
        <div>
            <PumpSelectionParameters/>
-           <ElectricMotor/>
        </div>
     );
 };

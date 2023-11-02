@@ -4,4 +4,14 @@
 }
 
 .App {
+
+}
+
+.active {
+    color: yellow;
+}
+
+a {
+    color: honeydew;
+    text-decoration: none;
 }

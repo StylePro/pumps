@@ -1,7 +1,8 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {inputPropertiesPump, selectPropertiesPump} from "../../../store/dataPumpSlice";
+import {clearCurrentValue, inputPropertiesPump, selectPropertiesPump} from "../../../../store/dataPumpSlice";
 import styles from './PumpSelectionParameters.module.css'
+import {Link} from "react-router-dom";
 
 const PumpSelectionParameters = () => {
     const pump = useSelector(state => state.pumps.currentPump.valueEng)     // undefined && строка
@@ -11,10 +12,14 @@ const PumpSelectionParameters = () => {
     function inputHandleChange(text, id) {
         dispatch(inputPropertiesPump({text, id}))
     }
+    function clearingFields () {
+        return dispatch(clearCurrentValue())
+    }
 
     const handleChange = (text, id) => {
         dispatch(selectPropertiesPump({text, id}))
     }
+
 
 
     function filterProperties(array) {
@@ -60,6 +65,13 @@ const PumpSelectionParameters = () => {
                     )
                 })}
             </div>
+
+            <button onClick={clearingFields}>Очистить</button>
+
+            <Link to = 'electricmotor'>
+                <button>Далее</button>
+            </Link>
+
         </div>
     );
 };
