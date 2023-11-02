@@ -75,16 +75,6 @@ const propertiesElectricMotorSlice = createSlice({
                 const newText = state.find(el=> el.id === id)
                 newText.currentValue = text
             },
-           /* addInput(state, action) {
-                const {text, id} = action.payload
-                const newText = state.find(el=> el.id === id)
-                newText.currentValue = text
-            },
-            addSelect (state, action) {
-                const {text, id} = action.payload
-                const newSelect = state.find(el=> el.id === id)
-                newSelect.currentValue = text
-            }*/
         }
     }
 )
